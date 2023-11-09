@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from 'react';
-import "./Profile.css";
-import PostDetail from './PostDetail';
-import ProfilePic from './ProfilePic';
+import "../css/Profile.css";
+import PostDetail from '../components/PostDetail';
+import ProfilePic from '../components/ProfilePic';
 
 export default function Profile() {
   const userid=JSON.parse(localStorage.getItem("user"))._id

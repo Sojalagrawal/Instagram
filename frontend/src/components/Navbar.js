@@ -1,12 +1,14 @@
 import React,{useContext} from 'react'
 import logo from "../img/logo.png"
-import "./Navbar.css"
+import "../css/Navbar.css"
 import {Link} from "react-router-dom"
 import { LoginContext } from './context/LoginContext'
+import { useNavigate } from 'react-router-dom'
 
 
 
 export default function Navbar({login}) {
+  const navigate=useNavigate();
   const {setModalOpen}=useContext(LoginContext);
   
   const loginStatus=()=>{
@@ -34,7 +36,7 @@ export default function Navbar({login}) {
   loginStatus();
   return (
     <div className="navbar">
-        <img src={logo} alt="logo" />
+        <img src={logo} alt="logo" onClick={()=>{navigate("/")}}/>
         <ul className='nav-menu'>
             {/* <li><a href="/signup">SignUp</a></li>
             <li><a href="/signin">SignIn</a></li> */}

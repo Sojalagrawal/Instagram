@@ -1,5 +1,5 @@
 import './App.css';
-import Home from './components/Home';
+import Home from './screens/Home';
 import Navbar from './components/Navbar';
 import React,{useState} from 'react';
 
@@ -7,14 +7,14 @@ import React,{useState} from 'react';
 import {BrowserRouter,Routes,Route} from "react-router-dom";
 import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
-import Profile from './components/Profile';
-import CreatePost from './components/CreatePost';
+import Profile from './screens/Profile';
+import CreatePost from './screens/CreatePost';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { LoginContext } from './components/context/LoginContext';
 import Modal from './components/Modal';
 import UserProfile from './components/UserProfile';
-import MyfollowingPost from './components/MyfollowingPost';
+import MyfollowingPost from './screens/MyfollowingPost';
 
 
 function App() {

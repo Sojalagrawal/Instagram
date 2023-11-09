@@ -76,7 +76,10 @@ export default function ProfilePic({changeProfile}) {
                 <input type="file" accept="image/*" ref={hiddenFileInput} style={{display:"none"}} onChange={(e)=>{setImage(e.target.files[0])}}/>
             </div>
             <div style={{borderTop:"1px solid #00000030"}}>
-                <button className='upload-btn' style={{color:"#ED4956"}}>Remove Current Photo</button>
+                <button className='upload-btn' style={{color:"#ED4956"}} onClick={()=>{
+                    setUrl(null);
+                    postPic();//hmne alag se run kyu kiya use effect me hi chl jata -->use effect me jb chlta jb url null na hota vha if(url) ki condition h
+                }}>Remove Current Photo</button>
             </div>
             <div style={{borderTop:"1px solid #00000030"}}>
                 <button style={{background:"none",border:"none",cursor:"pointer",fontSize:"15px"}} onClick={changeProfile}>Cancel</button>
