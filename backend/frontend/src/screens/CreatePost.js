@@ -19,7 +19,7 @@ export default function CreatePost() {
         //saving post
         //rendering ke tym comp mount hota h to useEffect chlta h aur jb url hoga ni err aajayega
         if(url){
-            fetch("http://localhost:5000/createPost",{
+            fetch("/createPost",{
                 method:"post",
                 headers:{
                     "Content-Type":"application/json",

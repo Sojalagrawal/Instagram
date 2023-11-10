@@ -69,7 +69,7 @@ router.post("/signin",[
                 console.log({token,user:{_id,name,email,userName}});
                 return res.status(200).json({ authtoken:token,message: "Signed in Successfully",user:{_id,name,email,userName}});
             } else {
-                return res.status(422).json({ error: "Invalid password" })
+                return res.status(422).json({error:"Invalid password" })
             }
         })
             .catch(err => console.log(err))

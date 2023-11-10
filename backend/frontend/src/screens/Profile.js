@@ -11,7 +11,7 @@ export default function Profile() {
   const [user,setUser]=useState("");
   const[changePic,setChangePic]=useState(false);
   useEffect(()=>{
-      fetch(`http://localhost:5000/user/${userid}`,{
+      fetch(`/user/${userid}`,{
         headers:{
           Authorization:"Bearer "+localStorage.getItem("jwt")
         }
