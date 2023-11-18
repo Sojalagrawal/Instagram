@@ -7,7 +7,7 @@ export default function ProfilePic({changeProfile}) {
 
 
     const postPic=()=>{
-        fetch("/uploadProfilePic",{
+        fetch("http://localhost:5000/uploadProfilePic",{
             method:"put",
             headers:{
                 "Content-Type":"application/json",

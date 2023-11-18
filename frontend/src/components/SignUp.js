@@ -18,7 +18,7 @@ export default function SignUp() {
 
 
      const postData=()=>{
-          fetch("/signup",{
+          fetch("http://localhost:5000/signup",{
                method:"post",
                headers:{
                     "Content-Type":"application/json"

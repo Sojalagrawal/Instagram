@@ -9,7 +9,7 @@ export default function UserProfile() {
   const [posts,setPosts]=useState([]);
   const [isFollow,setIsFollow]=useState(false);
   useEffect(()=>{
-      fetch(`/user/${userid}`,{
+      fetch(`http://localhost:5000/user/${userid}`,{
         headers:{
           Authorization:"Bearer "+localStorage.getItem("jwt")
         }
@@ -28,7 +28,7 @@ export default function UserProfile() {
 
   //to follow user
   const followUser=(userId)=>{
-      fetch("/follow",{
+      fetch("http://localhost:5000/follow",{
         method:"put",
         headers:{
           "Content-Type":"application/json",
@@ -49,7 +49,7 @@ export default function UserProfile() {
 
   //to unfollow user
   const unfollowUser=(userId)=>{
-    fetch("/unfollow",{
+    fetch("http://localhost:5000/unfollow",{
       method:"put",
       headers:{
         "Content-Type":"application/json",
@@ -72,13 +72,13 @@ export default function UserProfile() {
        <div className="profile-frame">
         {/* profile-pic */}
           <div className="profile-pic">
-             <img src="https://funkylife.in/wp-content/uploads/2022/09/boys-dp-from-funkylife-7-1024x1024.jpg" alt=""/>
+             <img src={user.Photo?user.Photo:"https://cdn-icons-png.flaticon.com/512/3135/3135715.png"} alt=""/>
           </div>
           {/* profile-data */}
           <div className="profile-data">
               <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}>
                 <h1>{user.name}</h1>
-                <button className='followBtn' onClick={
+                {userid!=JSON.parse(localStorage.getItem("user"))._id  && <button className='followBtn' onClick={
                   ()=>{
                     if(isFollow){
                       unfollowUser(user._id)
@@ -89,7 +89,7 @@ export default function UserProfile() {
                     }
                   }>
                     {isFollow? "Unfollow":"Follow"}
-                </button>
+                </button>}
               </div>
               <div className="profile-info" style={{display:"flex"}}>
                 <p>{posts.length} posts</p>

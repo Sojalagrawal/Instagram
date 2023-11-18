@@ -19,7 +19,7 @@ export default function CreatePost() {
         //saving post
         //rendering ke tym comp mount hota h to useEffect chlta h aur jb url hoga ni err aajayega
         if(url){
-            fetch("/createPost",{
+            fetch("http://localhost:5000/createPost",{
                 method:"post",
                 headers:{
                     "Content-Type":"application/json",
@@ -88,7 +88,7 @@ export default function CreatePost() {
                 <div className="card-pic">
                     <img src="https://funkylife.in/wp-content/uploads/2022/09/boys-dp-from-funkylife-7-1024x1024.jpg" alt=""/>
                 </div>
-                <h5>Ramesh</h5>
+                <h5>{JSON.parse(localStorage.getItem("user")).userName}</h5>
             </div>
             <textarea type="text" placeholder="Write a caption" value={body} onChange={(e)=>{setBody(e.target.value)}}/>
         </div>
